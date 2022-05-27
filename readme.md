@@ -1,3 +1,3 @@
 #Invaders
 
-Learning day canvas game
+Space invader canvas sketch following Daniel Shiffman
