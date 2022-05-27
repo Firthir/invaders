@@ -5,5 +5,5 @@ function WelcomeView() {
     textSize(32);
     text("Tarn welcome to the Invaders!", width/2, height/2);
     textSize(16);
-    text("Press Enter to start", width/2, height/2 + 30);
+    text("Press return to start", width/2, height/2 + 30);
 }
