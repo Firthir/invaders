@@ -11,7 +11,6 @@ function Alien(x, y, speed) {
     }
 
     this.move = function() {
-        console.log(this.speed);
         if (this.speed === 'fast') {
         this.x = this.x + this.xDir * 13;
         } else {

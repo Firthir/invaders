@@ -15,7 +15,7 @@ function setup() {
   createCanvas(1000, 600);
   textAlign(CENTER, CENTER);
   ship = new Ship();
-  for (var i = 0; i < 1; i++) {
+  for (var i = 0; i < 6; i++) {
     aliens[i] = new Alien(i * 80 + 40, 45, 'slow');
   }
 }
@@ -31,7 +31,7 @@ function draw() {
       LoadingView();
       setTimeout(() => {
         mode = game2Screen;
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < 6; i++) {
           aliens[i] = new Alien(i * 80 + 40, 45, 'fast');
         }
       }, 2000);
@@ -41,11 +41,11 @@ function draw() {
     Game2View();
     var bottom = false;
     for (var i = 0; i < aliens.length; i++) {
-      if (aliens[i].y > height + 300) {
+      if (aliens[i].y > height - 40) {
         bottom = true;
       }
     }
-    console.log(bottom);
+
     if (bottom) {
       mode = loseScreen;
     } else if (aliens.length === 0) {
@@ -72,9 +72,11 @@ function keyReleased() {
 }
 
 function keyPressed() {
-  console.log(key)
-  if (key === 'Enter') {
+  if (key === 'Enter' && mode == welcomeScreen) {
     mode = gameScreen;
+  }
+  if (key === 'Enter' && mode == winScreen || mode == loseScreen) {
+    mode = welcomeScreen;
   }
   if (key === ' ') {
     var bullet = new Bullet(ship.x, ship.y);

@@ -1,8 +1,36 @@
-html, body {
+html {
   margin: 0;
   padding: 0;
+  background: #555;
+  background-size: 155%;
 }
 
+body {
+  margin: 0 0 0 calc(50% - 500px);
+  padding: calc(50% - 600px) 0; 
+  overflow: hidden;
+}
 canvas {
   display: block;
+  margin: 40 auto;
+  position: relative;
+  z-index: 3;
+}
+
+body, html {
+  height: 100%;
+}
+
+.bg {
+  z-index: 1;
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  background-image: url(invader.png);
+  width: 150%;
+  height: calc(100% + 80px);
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
