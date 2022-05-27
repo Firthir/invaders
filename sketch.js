@@ -2,7 +2,6 @@ var mode = 0;
 const welcomeScreen = 0;
 const gameScreen = 1;
 const game2Screen = 2;
-const gameOverScreen = 3;
 const winScreen = 4;
 const loseScreen = 5;
 const loadingScreen = 6;
@@ -15,8 +14,8 @@ function setup() {
   createCanvas(1000, 600);
   textAlign(CENTER, CENTER);
   ship = new Ship();
-  for (var i = 0; i < 6; i++) {
-    aliens[i] = new Alien(i * 80 + 40, 45, 'slow');
+  for (var i = 0; i < 1; i++) {
+    aliens[i] = new Alien(i * 20 + 40, 45, 'slow');
   }
 }
 
